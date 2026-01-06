@@ -38,6 +38,7 @@ header .brand {
 
 header .navigation {
   position: relative;
+  transition: 0.5s;
 }
 
 header .navigation a {
@@ -210,7 +211,7 @@ section {
 .about .content .img-card {
   position: relative;
   width: 100%;
-  min-height: 450px;
+  /* min-height: 450px; */
 }
 
 .about .content .img-card img {
@@ -531,6 +532,16 @@ section {
 .footer p {
   margin-top: 10px;
 }
+.opacity{
+  width: 100%;
+  height: 100vh;
+  background-color: #05040ad5;
+  position: fixed;
+  z-index: 998;
+  display: none;
+  right:0%;
+  transition: 0.5s;
+}
 
 @media (max-width: 1049px) {
   header {
@@ -543,34 +554,34 @@ section {
 
   header .navigation {
     display: none;
+    /* right: -100%; */
   }
 
   header .navigation.active {
-    z-index: 888;
+    z-index: 998;
     position: fixed;
-    background: #fff;
-    top: 0;
+    background: #050505;
+    top: 68px;
     right: 0;
-    width: 380px;
+    width: 60%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     box-shadow: 0 5px 25px rgba(1 1 1 /15%);
-    transition: 0.3s ease;
+    transition: 0.5s;
   }
 
   header .navigation a {
-    color: #000;
-    font-size: 22px;
-    margin: 10px;
+    color: #fff;
+    font-size: 25px;
+    margin: 5px;
     padding: 0 20px;
     border-radius: 20px;
   }
 
   header .navigation a:hover {
-    background: rgba(16, 85, 203, 0.749);
     color: #fff;
   }
 
@@ -595,7 +606,11 @@ section {
     transition: 0.3s ease;
     filter: invert(1);
   }
-
+  .opacity{
+    right: -100%;
+    display: block;
+  }
+  
   section {
     padding: 80px 20px;
   }
@@ -676,4 +691,67 @@ section {
 .reveal.active {
   transform: translateY(0);
   opacity: 1;
+}
+@media (max-width:585px) {
+  header .navigation a {
+    color: #fff;
+    font-size: 15px;
+    margin: 5px;
+    padding: 0 20px;
+    border-radius: 20px;
+  }
+  .main .content h2 {
+    font-size: 24px;
+  }
+  .main .content h2 span{
+    font-size: 40px;
+  }
+  .btn{
+    font-size: 15px;
+  }
+  .section-title{
+    font-size: 30px;
+    text-align: center;
+  }
+  .paragraph-text{
+    font-size: 15px;
+  }
+  .bar .info span{
+    font-size: 15px;
+  }
+  .services .content .reveal{
+    min-width: 300px;
+  }
+  .section-title::after{
+    display: none;
+  }
+  .section-title::before{
+    display: none;
+  }
+}
+@media (max-width:385px){
+  .main .content h2 {
+    font-size: 18px;
+  }
+  .main .content h2 span{
+    font-size: 32px;
+  }
+  .btn{
+    font-size: 10px;
+  }
+  .animated-text h3{
+    font-size: 25px;
+  }
+  .animated-text{
+    height: 50px;
+  }
+  .about .content{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: space-between;
+  }
+}
+.opacity.active{
+  right: 0 !important;
 }
